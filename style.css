@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+html,body
+{
+	margin:0;
+	padding:0;
+}
+.intro{
+	text-align:center;
+	font-family:Helvetica;
+}
+#entercode{
+	font-size: 50px;
+	padding:5px;
+
+}
+p
+{
+	font-size:20px;
+}
+button{
+	display:block;
+	background:#e35507;
+	color:white;
+	font-weight:bold;	
+	border-radius:10px;
+	border:none;
+	font-size:14px;
+}
+button:hover
+{
+	cursor:pointer;
+	background:#ff823e;
+}
+button:active
+{
+	background:#e35507;	
+}
+#newuser
+{
+	margin: 10px auto;
+	padding: 15px 25px;
+	font-size:35px;
+}
+.hide
+{
+	display:none;
+}
+.common,.uncommon
+{
+	float:left;
+	width:50%;
+}
+.category
+{
+	text-align:center;
+	position:relative;
+}
+.common
+{
+	background:#5b5bab;
+}
+.uncommon
+{
+	background:#3ea542;
+}
+.card
+{
+	height:17vw; /* 1.36 times the width */
+	width:12.5vw;
+	border:1px solid black;
+	margin:1vw;	
+	display:inline-block;
+	background-size:100% 100%;	
+	z-index:1;
+	position:relative;
+}
+.card .fightcontrols
+{
+	z-index:200;
+	display:none;	
+	height:100%;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.card .fightcontrols .overlay
+{
+	height:100%;
+	width:100%;
+	background:red;
+	opacity:0.5;
+	display:none;
+	cursor:pointer;
+}
+.fightcontrols .overlay .plus
+{
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 100px;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    border-radius: 25px;
+}
+.fightcontrols:hover .overlay
+{
+	display:block;
+}
+.card .controls, .card .addcontrols
+{
+	height:100%;
+	width:100%;
+	background:rgba(0,0,0,0.5);
+	display:none;	
+	position:relative;
+}
+.card:hover .controls, .card:hover .addcontrols
+{
+	display:block;	
+}
+.card .controls .zoom{
+	background:url('magnify.png');
+	height:40px;
+	width:40px;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	cursor:pointer;
+}
+.card .controls .remove{			
+	height:22px;
+	width:22px;	
+	position:absolute;
+	right:0%;
+	top:0%;	
+	cursor:pointer;
+}
+.card .addcontrols input
+{
+	position:absolute;
+	background: rgba(0,0,0,0.5);
+	border:1px solid white;
+	color:white;
+	outline:none;
+	border:none;
+	width:calc(12.5vw - 20px);
+	padding: 10px;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+#fightButton,#goFightButton,#cancelButton
+{
+	background:#f73737;
+	padding: 5px 25px;
+	font-size:25px;
+	float:right;
+	margin: 10px 5px;
+}
+#cancelButton
+{
+	background: #e49823
+}
+#saveButton
+{
+	background:#3f78b5;
+	padding: 5px 25px;
+	font-size:25px;
+	float:right;
+	margin: 10px 5px;
+}
+#importButton
+{
+	background:#3f78b5;
+	padding: 5px 25px;
+	font-size:25px;
+	float:right;
+	margin: 10px 5px;
+}
+.fightingBar
+{	
+	background:#c71e1e;
+	z-index:2;
+}
+.headerfiller
+{
+	height:59px;
+	width:1px;
+}
+header h2
+{
+	color:black;
+	text-align:center;
+	font-weight:normal;
+	font-size: 40px;
+	margin:0;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	position:absolute;
+	font-family:'Fredoka One',Helvetica;
+}
+header
+{	
+	overflow:hidden;
+	background:#ffbf48;
+	position:fixed;
+	width:100%;
+	display:block;
+	top:0;
+	left:0;
+	z-index:2;
+}
+header:after
+{
+	clear:both;
+	content:'';
+	display:block;	
+}
+.rare
+{
+	background:#f3b25f;
+}
+.ultrarare
+{
+	background:#f73737;
+}
+p
+{
+	text-align:center;
+	font-family:'Fredoka One',Helvetica;
+	margin:0;
+	padding-top:10px;
+}
+.blocker
+{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height: 100%;
+	background:rgba(0,0,0,0.9);
+	z-index:20;
+}
+.popup{
+	z-index:20;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	padding:10px;
+	background:#ffbf48;
+	box-shadow: 0px 0px 40px black;
+}
+.popup p
+{
+	margin:0;
+	padding:5px;
+}
+.popup input
+{	
+    display: block;
+    margin: 10px auto 0 auto;
+    font-size: 20px;
+    width: 80%;
+}
+.popup button
+{
+	margin:5px auto;
+	font-size: 20px;
+	padding: 5px 10px;
+}
+.categoryflag
+{
+	font-family: "Luckiest Guy", Helvetica;
+	font-size: 13vw;
+	position:absolute;
+	top: 50%;
+	left:100%;
+	transform:translate(-50%,-50%);
+	opacity:0.25;
+	cursor:default;
+}
+#pain .categoryflag
+{
+	color:red;
+}
+#fluids .categoryflag
+{
+	color:#ffff52;
+}
+#sensation .categoryflag
+{
+	color:#71117b;
+}
+#sexual .categoryflag
+{
+	color:white;
+}
+#clothing .categoryflag
+{
+	color:#ffa500;
+}
+#restrictive .categoryflag
+{
+	color:cyan;
+}
+#domination .categoryflag
+{
+	color:black;
+}
+#exhibitionism .categoryflag
+{
+	color:#25ff00;
+}
+#tedium .categoryflag
+{
+	color:#525252;
+}
+#DDLG .categoryflag
+{
+	color:pink;
+}
+.previewname
+{
+	position: absolute;    
+    left: 50%;
+    width: 80%;
+    top: 50%;
+    font-family: Helvetica;
+    transform: translate(-50%,-50%);
+}
+.fightchosen
+{
+	border:5px solid red;
+}

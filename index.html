@@ -1,0 +1,228 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Dare Wars Card Collection</title>
+  
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<div class="intro">
+		<p>Enter your code:</p>
+		<input type="text" id="entercode" onkeyup="checkCode(event)">
+		<p>Or..</p>
+		<button id="newuser" onclick="startCollecting()">Start Collecting</button>
+	</div>
+	<div class="collection hide">
+		<header class="fightingBar">
+			<h2>Select <span id="fightCardsLeft">5</span> more cards</h2>
+			<button id="cancelButton" onclick="cancelFight()">Cancel</button>
+			<button id="goFightButton" onclick="generateFightLineup()">Go!</button>			
+		</header>
+		<div class="headerfiller"></div>
+		<header class="collectBar">
+			<h2>Your Collection</h2>
+			<button id="saveButton" onclick="saveCollection()">Export</button>
+			<button id="fightButton" onclick="startFight()">Fight</button>
+		</header>
+		<div class="common">
+			<p>Common</p>
+			<div class="category" id="pain">
+				<div class="categoryflag">Pain</div>
+				<div class="card"><div class="previewname">Bare Handed Spank</div></div>
+				<div class="card"><div class="previewname">Ping Pong Paddling</div></div>
+				<div class="card"><div class="previewname">Pegging</div></div>
+			</div>
+			<div class="category" id="fluids">
+				<div class="categoryflag">Fluids</div>
+				<div class="card"><div class="previewname">Jar of Piss</div></div>
+				<div class="card"><div class="previewname">Wet Yourself</div></div>
+				<div class="card"><div class="previewname">Diapers</div></div>
+			</div>
+			<div class="category" id="sensation">
+				<div class="categoryflag">Sensation</div>
+				<div class="card"><div class="previewname">Tickling</div></div>
+				<div class="card"><div class="previewname">Oiled</div></div>
+				<div class="card"><div class="previewname">Ice Play</div></div>
+			</div>
+			<div class="category" id="sexual">
+				<div class="categoryflag">Sexual</div>
+				<div class="card"><div class="previewname">Denial</div></div>
+				<div class="card"><div class="previewname">Chastity</div></div>
+				<div class="card"><div class="previewname">Deep Throating</div></div>
+			</div>
+			<div class="category" id="clothing">
+				<div class="categoryflag">Clothing</div>
+				<div class="card"><div class="previewname">Stripping</div></div>
+				<div class="card"><div class="previewname">Going Commando</div></div>
+				<div class="card"><div class="previewname">Clothing Control</div></div>
+			</div>
+			<div class="category" id="restrictive">
+				<div class="categoryflag">Restrictive</div>
+				<div class="card"><div class="previewname">Ball Gag</div></div>
+				<div class="card"><div class="previewname">Collar</div></div>
+				<div class="card"><div class="previewname">Cuffs</div></div>
+			</div>
+			<div class="category" id="domination">
+				<div class="categoryflag">Domination</div>
+				<div class="card"><div class="previewname">Pet Play</div></div>
+				<div class="card"><div class="previewname">Age Play</div></div>
+				<div class="card"><div class="previewname">Sissification</div></div>
+			</div>
+			<div class="category" id="exhibitionism">
+				<div class="categoryflag">Exhibitionism</div>
+				<div class="card"><div class="previewname">Webcam Fun!</div></div>
+				<div class="card"><div class="previewname">Dirty Pictures</div></div>
+				<div class="card"><div class="previewname">Upload yourself</div></div>
+			</div>
+			<div class="category" id="tedium">
+				<div class="categoryflag">Tedium</div>
+				<div class="card"><div class="previewname">Write Lines</div></div>
+				<div class="card"><div class="previewname">Corner Time</div></div>
+				<div class="card"><div class="previewname">Body Writing</div></div>
+			</div>
+			<div class="category" id="DDLG">
+				<div class="categoryflag">DDLG</div>
+				<div class="card"><div class="previewname">Pacifier</div></div>
+				<div class="card"><div class="previewname">Colouring</div></div>
+				<div class="card"><div class="previewname">Bedtime Story</div></div>
+			</div>
+		</div>
+		<div class="uncommon">
+			<p>Uncommon</p>
+			<div class="category" id="pain">
+				<div class="card"><div class="previewname">Heavy Paddling</div></div>
+				<div class="card"><div class="previewname">Nipple Torture</div></div>
+				<div class="card"><div class="previewname">CBT</div></div>
+			</div>
+			<div class="category" id="fluids">
+				<div class="card"><div class="previewname">Cum Play</div></div>
+				<div class="card"><div class="previewname">Shit Play</div></div>
+				<div class="card"><div class="previewname">Vomit Play</div></div>
+			</div>
+			<div class="category" id="sensation">
+				<div class="card"><div class="previewname">Shower Head</div></div>
+				<div class="card"><div class="previewname">Wax Play</div></div>
+				<div class="card"><div class="previewname">Messy Play</div></div>
+			</div>
+			<div class="category" id="sexual">
+				<div class="card"><div class="previewname">Penetration</div></div>
+				<div class="card"><div class="previewname">Orgasm</div></div>
+				<div class="card"><div class="previewname">Ruined Orgasm</div></div>
+			</div>
+			<div class="category" id="clothing">
+				<div class="card"><div class="previewname">Wedgie</div></div>
+				<div class="card"><div class="previewname">Cross Dressing</div></div>
+				<div class="card"><div class="previewname">Fetish Wear</div></div>
+			</div>
+			<div class="category" id="restrictive">
+				<div class="card"><div class="previewname">Rope</div></div>
+				<div class="card"><div class="previewname">Stocks</div></div>
+				<div class="card"><div class="previewname">Bondage</div></div>
+			</div>
+			<div class="category" id="domination">
+				<div class="card"><div class="previewname">Hypnosis</div></div>
+				<div class="card"><div class="previewname">Humiliation</div></div>
+				<div class="card"><div class="previewname">Slavery</div></div>
+			</div>
+			<div class="category" id="exhibitionism">
+				<div class="card"><div class="previewname">Wear Slutty Clothes</div></div>
+				<div class="card"><div class="previewname">Hidden Public</div></div>
+				<div class="card"><div class="previewname">Public Nudity</div></div>
+			</div>
+			<div class="category" id="tedium">
+				<div class="card"><div class="previewname">Rules</div></div>
+				<div class="card"><div class="previewname">Exercise</div></div>
+				<div class="card"><div class="previewname">Sensory Deprivation</div></div>
+			</div>
+			<div class="category" id="DDLG">
+				<div class="card"><div class="previewname">Sleep Control</div></div>
+				<div class="card"><div class="previewname">Computer Control</div></div>
+				<div class="card"><div class="previewname">Food Control</div></div>
+			</div>
+		</div>
+		<div class="rare">
+			<p>Rare</p>
+			<div class="category" id="rare1">
+				<div class="card"><div class="previewname"></div></div>
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+			</div>
+			<div class="category" id="rare2">
+				<div class="card"><div class="previewname"></div></div>
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+			</div>
+			<div class="category" id="rare3">
+				<div class="card"><div class="previewname"></div></div>
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+			</div>
+			<div class="category" id="rare4">
+				<div class="card"><div class="previewname"></div></div>
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+			</div>
+			<div class="category" id="rare5">
+				<div class="card"><div class="previewname"></div></div>
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+			</div>			
+		</div><div class="ultrarare">
+			<p>Ultra Rare</p>
+			<div class="category" id="ultrarare1">
+				<div class="card"><div class="previewname"></div></div>
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+			</div>
+			<div class="category" id="ultrarare2">
+				<div class="card"><div class="previewname"></div></div>
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+				<div class="card"><div class="previewname"></div></div>	
+			</div>			
+		</div>
+	</div>
+	<div class="controls hide">
+		<div class="zoom" onclick="zoomIn(this)"></div>
+		<div class="remove" onclick="removeURL(this)">&#10060;</div>
+	</div>
+	<div class="fightcontrols hide">
+		<div class="overlay" onclick="addToFight(this)">
+			<span class="plus">+</span>
+		</div>
+	</div>
+	<div class="addcontrols hide" onclick>
+		<input type="text" placeholder="Paste card URL here.">
+	</div>
+	<div class="blocker hide" onclick="closeCheck(event)">
+		<div class="popup"></div>		
+	</div>	
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
